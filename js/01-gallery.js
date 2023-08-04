@@ -12,6 +12,9 @@ function createMarkup(arr) {
 }
 
 function getOriginal(event) {
+    if (event.target.tagName !== 'IMG') {
+        return
+    }
     event.preventDefault()
     const imgOrig = event.target.dataset.source
     const instance = basicLightbox.create(`<img src="${imgOrig}">`)
